@@ -1,0 +1,9 @@
+rm -f a.exe
+rm -f temp.raw
+
+g++ -I ../common ../common/Sinc.o ../common/Song.o ../common/Sound.o TestSong.cpp
+
+./a
+
+ffmpeg -y -hide_banner -f s16le -ar 48000 -ac 1 -i temp.raw test_sinc.mp3
+

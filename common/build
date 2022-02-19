@@ -1,0 +1,6 @@
+rm -f *.o
+g++ -c Note.cpp
+g++ -c Sinc.cpp
+g++ -c Song.cpp
+g++ -c Sound.cpp
+g++ -c Wave.cpp
