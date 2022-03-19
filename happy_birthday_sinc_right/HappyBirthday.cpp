@@ -3,20 +3,20 @@
 #include <iostream>
 #include <vector>
 
-class HappyBirthdaySincLeft : public Song { 
+class HappyBirthday: public Song { 
 public:
-	HappyBirthdaySincLeft();
+	HappyBirthday();
 
 private:
 	void push(double startTime, double quarterStep, double baseFrequency, double a);
 };
 
-HappyBirthdaySincLeft::HappyBirthdaySincLeft() {
+HappyBirthday::HappyBirthday() {
 	double waitTime = 4;
-	double len  = 30;
+	double len  = 20;
 
 	startTime   =  0.0;
-	duration    =  2 * waitTime + len;
+	duration    =  waitTime + len * 2 * 2;
 	attack      =  0.5;
 	decay       =  0.0;
 	release     =  0.5;
@@ -27,14 +27,41 @@ HappyBirthdaySincLeft::HappyBirthdaySincLeft() {
 
 	// level 1
 
-	double q = len / 56.0;
+	push(waitTime + len * 0 , 0.28 , f       , 3.0);
+//	push(waitTime + len * 0 , 0.28 , f / 2.0 , 6.0);
+//	push(waitTime + len * 0 , 0.28 , f / 4.0 , 9.0);
 
-	push(waitTime + len * 0     , q   , f       , 3.0);
-	push(waitTime + len * 0     , q/2 , f       , 6.0);
-	push(waitTime + len * 1 / 2 , q/2 , f       , 6.0);
+//	push(waitTime + len * 1 , 0.28 , f       , 3.0);
+	push(waitTime + len * 1 , 0.28 , f / 2.0 , 6.0);
+//	push(waitTime + len * 1 , 0.28 , f / 4.0 , 9.0);
+
+//	push(waitTime + len * 2 , 0.28 , f       , 3.0);
+//	push(waitTime + len * 2 , 0.28 , f / 2.0 , 6.0);
+	push(waitTime + len * 2 , 0.28 , f / 4.0 , 9.0);
+
+//	push(waitTime + len * 3 , 0.28 , f       , 3.0);
+//	push(waitTime + len * 3 , 0.28 , f / 2.0 , 6.0);
+//	push(waitTime + len * 3 , 0.28 , f / 4.0 , 9.0);
+
+	// level 2
+
+	push(waitTime + len * 0 * 2 , 0.28 * 2 , f       , 3.0);
+	push(waitTime + len * 0 * 2 , 0.28 * 2 , f / 2.0 , 6.0);
+//	push(waitTime + len * 0 * 2 , 0.28 * 2 , f / 4.0 , 9.0);
+
+//	push(waitTime + len * 1 * 2 , 0.28 * 2 , f       , 3.0);
+	push(waitTime + len * 1 * 2 , 0.28 * 2 , f / 2.0 , 6.0);
+	push(waitTime + len * 1 * 2 , 0.28 * 2 , f / 4.0 , 9.0);
+
+	// level 3
+
+	push(waitTime + len * 0 * 4 , 0.28 * 4 , f       , 3.0);
+	push(waitTime + len * 0 * 4 , 0.28 * 4 , f / 2.0 , 6.0);
+	push(waitTime + len * 0 * 4 , 0.28 * 4 , f / 4.0 , 9.0);
+
 }
 
-void HappyBirthdaySincLeft::push(
+void HappyBirthday::push(
 	double startTime, 
 	double quarterStep, 
 	double baseFrequency, 
@@ -81,7 +108,7 @@ int main(int argc, char * argv[]) {
 		exit(1);
 	}
 
-	Sound * sound = new HappyBirthdaySincLeft();
+	Sound * sound = new HappyBirthday();
 	sound->writeSamples(outfile);
 }
 
