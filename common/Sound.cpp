@@ -49,7 +49,7 @@ void Sound::writeSamples(FILE * file) const {
 	long numSamples = samplesPerSecond * duration;
 	for (unsigned int t = 0; t < numSamples; ++t) {
 		double seconds = t / (double) samplesPerSecond;
-		signed short s = (SHRT_MAX >> 4) * envelope(seconds, sample(seconds));
+		signed short s = (SHRT_MAX >> 2) * envelope(seconds, sample(seconds));
 		fwrite(reinterpret_cast<unsigned char *>(&s), 1, 2, file);
 	}
 }
