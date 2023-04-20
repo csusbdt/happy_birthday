@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cassert>
+#include <climits>
 #include "Sound.h"
 
 using namespace std;

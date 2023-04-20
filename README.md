@@ -14,3 +14,7 @@ I built this project with mingw.
 I looked at https://www.cs.fsu.edu/~myers/howto/g++compiling.txt
 to remember how to compile C++.
 
+To compile under cygwin, I cloned this repo with the following.
+
+    git clone --config core.autocrlf=false git@github.com:csusbdt/happy_birthday.git
+
