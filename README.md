@@ -11,6 +11,9 @@ my first version of Happy Birthday using sinc notes.
 __happy_birthday_2__ I used this as a fourth step to generate 
 my second version of Happy Birthday using sinc notes.
 
+__happy_birthday_1_432__ I used this to generate a version of happy birthday 1 using the
+traditional tuning where A is 432 Hz.
+
 __happy_birthday_2_432__ I used this to generate a version of happy birthday 2 using the
 traditional tuning where A is 432 Hz.
 
