@@ -5,7 +5,7 @@ g++ -I ../common ../common/Sinc.o ../common/Song.o ../common/Sound.o HappyBirthd
 
 ./a
 
-ffmpeg -y -hide_banner -f s16le -ar 48000 -ac 1 -i temp.raw -filter:a "volume=1.5" ../docs/happy_birthday_2_432.mp3
+ffmpeg -y -hide_banner -f s16le -ar 48000 -ac 1 -i temp.raw -filter:a "volume=1.5" ../docs/happy_birthday_1_432.mp3
 
 rm temp.raw
 rm a.*
